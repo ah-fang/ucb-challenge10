@@ -252,44 +252,70 @@ const generatePage = () => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <link ref="stylesheet" src="./style.css">
     </head>
     <body>
-        <header>My Team</header>
+        <header class="header bg-success text-center p-2">
+            <h1>My Team<h1>
+        </header>
 
-        <div class = "container">
+        <div class = "container d-flex flex-wrap justify-content-center">
             ${employees
                 .filter((employee) => employee instanceof Manager)
                 .map((manager) => `
-                    <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-                        <h3 class="text-light">${manager.name}</h3>
-                        <h4>Manager</h4>
-                        <p>ID: ${manager.id}</p>
-                        <a href="mailto:${manager.email}">Email: ${manager.email}</a>
-                        <p>Office Number: ${manager.office}</p>
+                    <div class="card col-12 col-md-6 col-lg-3 m-2 bg-dark p-3 flex-column">
+                        <div class="card-header text-light">
+                            <h3 class="text-light">${manager.name}</h3>
+                            <h4>Manager</h4>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p>ID: ${manager.id}</p>
+                            <p>Email: 
+                                <a href="mailto:${manager.email}">${manager.email}</a>
+                            </p>
+                            <p>Office Number: ${manager.office}</p>
+                        </div>
                     </div>`)}
 
             ${employees
                 .filter((employee) => employee instanceof Engineer)
                 .map((engineer) => `
-                    <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-                        <h3 class="text-light">${engineer.name}</h3>
-                        <h4>Engineer</h4>
-                        <p>ID: ${engineer.id}</p>
-                        <a href="mailto:${engineer.email}">Email: ${engineer.email}</p>
-                        <a href="github.com/${engineer.github}" class="btn mt-auto"><i class="fab fa-github mr-2"></i>GitHub</a>
+                    <div class="card col-12 col-md-6 col-lg-3 m-2 bg-dark p-3 flex-column">
+                            <div class="card-header text-light">
+                                <h3 class="text-light">${engineer.name}</h3>
+                                <h4>Engineer</h4>
+                            </div>
+                        <div class="card-body bg-light">
+                            <p>ID: ${engineer.id}</p>
+                            <p>Email: 
+                                <a href="mailto:${engineer.email}">${engineer.email}</a>
+                            </p>
+                            <p>Github: 
+                                <a href="https://github.com/${engineer.github}" class="mt-auto"><i class="fab fa-github mr-2"></i>${engineer.github}</a>
+                            </p>
+                        </div>
+                    
                     </div>`)}
 
             ${employees
                 .filter((employee) => employee instanceof Intern)
                 .map((intern) => `
-                    <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-                        <h3 class="text-light">${intern.name}</h3>
-                        <h4>Intern</h4>
-                        <p>ID: ${intern.id}</p>
-                        <a href="mailto:${intern.email}">Email: ${intern.email}</p>
-                        <p>Office Number: ${intern.school}</p>
+                    <div class="card col-12 col-md-6 col-lg-3 m-2 bg-dark p-3 flex-column">
+                        <div class="card-header text-light">
+                            <h3 class="text-light">${intern.name}</h3>
+                            <h4>Intern</h4>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p>ID: ${intern.id}</p>
+                            <p>Email: 
+                                <a href="mailto:${intern.email}">${intern.email}</a>
+                            </p>
+                            <p>School: ${intern.school}</p>
+                        </div>
                     </div>`)}
+
         </div>
     </body>
     </html>`; 
@@ -319,6 +345,5 @@ function init() {
                 console.log(err);
             })
 }
-
 
 init();
