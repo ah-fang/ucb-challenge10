@@ -11,11 +11,7 @@ Respond N to "Would you like to add another team member" to exit the prompts and
 
 
 ## Installation
-After cloning, run the following command in terminal:
-    
-    npm init
-
-Confirm that Inquirer and Jest are included in the packages. If not, run:
+After cloning, confirm that [Inquirer]("https://www.npmjs.com/package/inquirer#documentation") and [Jest]("https://jestjs.io/docs/getting-started") are included in the packages. To install locally, run the following commands in terminal:
 
     npm install inquirer
     npm install jest
