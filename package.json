@@ -1,0 +1,27 @@
+{
+  "name": "ucb-challenge10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ah-fang/ucb-challenge10.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ah-fang/ucb-challenge10/issues"
+  },
+  "homepage": "https://github.com/ah-fang/ucb-challenge10#readme",
+  "dependencies": {
+    "email-validator": "^2.0.4",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
