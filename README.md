@@ -1,4 +1,4 @@
-# UCB Challenge 10
+# Team Profile Generator
 
 ## Description
 This command-line application generates a webpage for a company with information about the employees. 
